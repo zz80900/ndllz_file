@@ -16,6 +16,7 @@ dns:
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
     - { name: 'Hy2-s14-zz80900', server: 188.68.240.161, port: 12790,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: f0f8c600-f96c-4d26-ae78-9338b2a423e2, alpn: [h3], insecure: 1 }
+    - { name: 'Hy2-s12-ndllz-xjc', server: 85.194.246.115, port: 53252,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: c8ed6f77-3a96-46f9-9959-79118f9c1019, alpn: [h3], insecure: 1 }
 proxy-groups:
     - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-s14-zz80900'] }
     - { name: 自动选择, type: url-test, proxies: ['Hy2-s14-zz80900'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
