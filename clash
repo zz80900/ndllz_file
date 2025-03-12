@@ -17,11 +17,10 @@ dns:
 proxies:
     - { name: 'Hy2-s14-zz80900', server: 188.68.240.161, port: 12790,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: f0f8c600-f96c-4d26-ae78-9338b2a423e2, alpn: [h3], insecure: 1 }
     - { name: 'Hy2-s12-ndllz-xjc', server: 85.194.246.115, port: 53252,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: c8ed6f77-3a96-46f9-9959-79118f9c1019, alpn: [h3], insecure: 1 }
-    - { name: 'linux分享自建', server: 47.79.5.90, port: 27171, type: vmess, uuid: 6f0af32c-e211-4226-dab6-7373c95aa5f8, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-opts: {path: /6f0af32c}}
-    - { name: 233boy-hysteria2-104.233.211.26, server: 104.233.211.26, port: 40837, client-fingerprint: chrome, type: hysteria2, password: 3e9bc412-6c40-4f68-9a31-fdd20c81a87c, skip-cert-verify: true, alpn: [h3], udp: true}
+    - { name: 233boy-hysteria2, server: 104.233.211.26, port: 40837, client-fingerprint: chrome, type: hysteria2, password: 3e9bc412-6c40-4f68-9a31-fdd20c81a87c, skip-cert-verify: true, alpn: [h3], udp: true}
 proxy-groups:
-    - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-s14-zz80900', 'Hy2-s12-ndllz-xjc','linux分享自建','233boy-hysteria2-104.233.211.26'] }
-    - { name: 自动选择, type: url-test, proxies: ['Hy2-s14-zz80900','Hy2-s12-ndllz-xjc','linux分享自建','233boy-hysteria2-104.233.211.26'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-s14-zz80900', 'Hy2-s12-ndllz-xjc','233boy-hysteria2'] }
+    - { name: 自动选择, type: url-test, proxies: ['Hy2-s14-zz80900','Hy2-s12-ndllz-xjc','233boy-hysteria2'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
    
 rules:
     - 'DOMAIN,link02.pikachucloud.site,DIRECT'
