@@ -17,10 +17,12 @@ dns:
 proxies:
     - { name: 'Hy2-t01', server: 188.68.240.161, port: 12790,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: f0f8c600-f96c-4d26-ae78-9338b2a423e2, alpn: [h3], insecure: 1 }
     - { name: 'Hy2-t02', server: 85.194.246.115, port: 53252,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: c8ed6f77-3a96-46f9-9959-79118f9c1019, alpn: [h3], insecure: 1 }
-    - { name: hy2-01, server: 104.233.211.26, port: 40837, client-fingerprint: chrome, type: hysteria2, password: 3e9bc412-6c40-4f68-9a31-fdd20c81a87c, skip-cert-verify: true, alpn: [h3], udp: true}
+    - { name: Hy-01, server: 104.233.211.26, port: 40837, client-fingerprint: chrome, type: hysteria2, password: 3e9bc412-6c40-4f68-9a31-fdd20c81a87c, skip-cert-verify: true, alpn: [h3], udp: true}
+    - {name: ss-01, server: ww.556359.xyz, port: 13308, type: ss, cipher: aes-256-gcm, password: NWd6TFZNNEYzeWNYUWpzdjRmUkRXRWtOMHJMMlpmdTg=, udp: true}
+    - {name: Hy-02, server: ww.556359.xyz, port: 59463, type: hysteria2, password: fb0e0d3e-8f4c-4994-b2a3-458928f73058, sni: www.bing.com, skip-cert-verify: true, udp: true}
 proxy-groups:
-    - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-t01', 'Hy2-t02','hy2-01'] }
-    - { name: 自动选择, type: url-test, proxies: ['Hy2-t01','Hy2-t02','hy2-01'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-t01', 'Hy2-t02','Hy-01'] }
+    - { name: 自动选择, type: url-test, proxies: ['Hy2-t01','Hy2-t02','Hy-01',ss-01,Hy-02], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
    
 rules:
     - 'DOMAIN,link02.pikachucloud.site,DIRECT'
