@@ -15,12 +15,10 @@ dns:
     fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
     fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
 proxies:
-    - { name: 'Hy2-t01', server: 188.68.240.161, port: 12790,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: f0f8c600-f96c-4d26-ae78-9338b2a423e2, alpn: [h3], insecure: 1 }
-    - { name: 'Hy2-t02', server: 85.194.246.115, port: 53252,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: c8ed6f77-3a96-46f9-9959-79118f9c1019, alpn: [h3], insecure: 1 }
-    - { name: 'Hy2-t03', server: 188.68.240.161, port: 11401,  skip-cert-verify: true, sni: www.bing.com, type: hysteria2, password: 42d72dc6-a632-427e-ae1c-30f1b9ee2deb, alpn: [h3], insecure: 1 }
+   - {"type":"vless","name":"VLESS-XTLS-uTLS-REALITY","server":"16.163.145.115","port":443,"uuid":"ca0e2097-73cf-4e9d-a83a-fc80e30867fd","skip-cert-verify":true}
 proxy-groups:
-    - { name: NDLLZ, type: select, proxies: [自动选择, 'Hy2-t01', 'Hy2-t02','Hy2-t03'] }
-    - { name: 自动选择, type: url-test, proxies: [ 'Hy2-t01', 'Hy2-t02','Hy2-t03'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
+    - { name: NDLLZ, type: select, proxies: [自动选择, 'VLESS-XTLS-uTLS-REALITY'] }
+    - { name: 自动选择, type: url-test, proxies: [ 'VLESS-XTLS-uTLS-REALITY'], url: 'http://www.gstatic.com/generate_204', interval: 86400 }
    
 rules:
     - 'DOMAIN,link02.pikachucloud.site,DIRECT'
