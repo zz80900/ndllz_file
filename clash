@@ -55,6 +55,7 @@ proxy-groups:
     type: url-test
     proxies:
       - VLESS-XTLS-uTLS-REALITY
+      - Shadowsocks-2022-blake3-aes-256-gcm
     url: https://www.gstatic.com/generate_204
     interval: 300
     lazy: false
