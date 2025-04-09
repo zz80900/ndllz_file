@@ -37,6 +37,12 @@ proxies:
     tfo: false
     skip-cert-verify: false
     flow: xtls-rprx-vision
+  - name: Shadowsocks-2022-blake3-aes-256-gcm
+    server: 16.163.145.115
+    port: 12580
+    type: ss
+    cipher: 2022-blake3-aes-256-gcm
+    password: mapEOPiIt7SogREwmu2JElaov7t2gkIFAIax+6iMtVA=
 proxy-groups:
   - type: select
     name: 🚀 节点选择
