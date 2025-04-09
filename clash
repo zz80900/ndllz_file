@@ -51,6 +51,7 @@ proxy-groups:
       - DIRECT
       - REJECT
       - VLESS-XTLS-uTLS-REALITY
+      - Shadowsocks-2022-blake3-aes-256-gcm
   - name: ⚡ 自动选择
     type: url-test
     proxies:
