@@ -24,7 +24,7 @@ dns:
 proxies:
   - name: VLESS-XTLS-uTLS-REALITY
     type: vless
-    server: 16.163.145.115
+    server: 18.162.141.160
     port: 443
     uuid: ca0e2097-73cf-4e9d-a83a-fc80e30867fd
     tls: true
@@ -38,7 +38,7 @@ proxies:
     skip-cert-verify: false
     flow: xtls-rprx-vision
   - name: Shadowsocks-2022-blake3-aes-256-gcm
-    server: 16.163.145.115
+    server: 18.162.141.160
     port: 12580
     type: ss
     cipher: 2022-blake3-aes-256-gcm
